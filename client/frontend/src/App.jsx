@@ -8,6 +8,7 @@ import Result from "./pages/Result";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
+import AdminDashboard from "./pages/admin/AdminDashboard"; // <- add this import
 import AdminCreateExperience from "./pages/admin/AdminCreateExperience";
 import AdminPromoManager from "./pages/admin/AdminPromoManager";
 import AdminBookings from "./pages/admin/AdminBookings"; // <-- new

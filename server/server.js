@@ -8,12 +8,26 @@ dotenv.config();
 
 
 const app = express();
-app.use(cors());
 app.use(express.json());
 
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
-app.use(cors({ origin: FRONTEND_URL, credentials: true }));
+const allowedOrigins = FRONTEND_URL_STRING.split(',').map(url => url.trim());
 
+// 3. Configure CORS with the array of allowed origins
+app.use(cors({ 
+    origin: (origin, callback) => {
+        // Check if the request origin is in our list OR if it's undefined 
+        // (undefined happens for same-origin requests or tools like Postman)
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            // Optional: Log the blocked origin for debugging
+            // console.log(`Blocked by CORS: ${origin}`); 
+            callback(new Error('Not allowed by CORS'), false);
+        }
+    }, 
+    credentials: true 
+}));
 // routes
 const experiencesRoutes = require('./routes/experiences');
 const bookingsRoutes = require('./routes/bookings');

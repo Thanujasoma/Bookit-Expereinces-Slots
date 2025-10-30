@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
-const allowedOrigins = FRONTEND_URL_STRING.split(',').map(url => url.trim());
+const allowedOrigins = FRONTEND_URL.split(',').map(url => url.trim());
 
 // 3. Configure CORS with the array of allowed origins
 app.use(cors({ 

@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 
 /**
  * Minimal Admin Dashboard placeholder.
- * If you already have a more complete AdminDashboard, replace this file
- * or merge the contents. This prevents the "AdminDashboard is not defined" runtime error.
+ * Add your real admin UI here later.
  */
 export default function AdminDashboard() {
   return (
@@ -21,7 +20,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="bg-white p-4 rounded shadow-sm">
           <h3 className="font-semibold">Overview</h3>
-          <p className="text-sm text-gray-600 mt-2">This is a placeholder admin dashboard. Replace with your real admin UI when ready.</p>
+          <p className="text-sm text-gray-600 mt-2">Placeholder admin dashboard. Replace with your full admin UI when ready.</p>
         </div>
       </div>
     </div>
